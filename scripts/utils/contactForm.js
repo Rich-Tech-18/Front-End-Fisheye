@@ -1,9 +1,27 @@
 function displayModal() {
     const modal = document.getElementById("contact_modal");
 	modal.style.display = "block";
-}
+};
 
 function closeModal() {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "none";
-}
+};
+
+const buttonModal = document.querySelector('#modalSend');
+const formulaireModal = document.querySelector('#modalDiv');
+const prenom = document.querySelector('#first');
+const nom = document.querySelector('#last');
+const mail = document.querySelector('#mail');
+const message = document.querySelector('#message');
+
+buttonModal.addEventListener('click', function(event){
+    event.preventDefault();
+    console.log('Formulaire Envoyée');
+    console.log('---------------------------------');
+    console.log('Prénom : ' + prenom.value);
+    console.log('Nom : ' + nom.value);
+    console.log('mail : ' + mail.value);
+    console.log('message : ' + message.value);
+    formulaireModal.reset();
+});

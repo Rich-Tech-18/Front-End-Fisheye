@@ -1,36 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <title>Fisheye - photographe </title>
   </head>
   <body>
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+      <a href="index.html"><img src="assets/images/logo.png" class="logo" alt="logo du site fisheye"/></a>
     </header>
     <main id="main">
       <div class="photograph-header">
         <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
       </div>
-    </main>
-    <div id="contact_modal">
+      <div class="sortPhoto">
+          <label for="select-sort">
+            <p>Trier par </p>
+          </label>
+            <select name="sort" id="select-sort">
+              <option value="normal"></option>
+              <option value="populaire">Popularité</option>
+              <option value="" disabled="disabled">──────</option>
+              <option value="date">Date</option>
+              <option value="" disabled="disabled">──────</option>
+              <option value="title">Titre</option>
+            </select>
+        </div>
+      
+      <div class="photograph-body">
+      </div> 
+
+      <div class="photograph-price">
+
+      </div>
+      
+      <div id="contact_modal" aria-hidden="true">
 			<div class="modal">
 				<header>
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <img src="assets/icons/close.svg" onclick="closeModal()" alt="Fermer le formulaire" role="img"/>
         </header>
-				<form>
+				<form id="modalDiv">
 					<div>
-						<label>Prénom</label>
-						<input />
+						<label for="first">Prénom</label>
+						<input 
+            type="text"
+            id="first"
+            name="first"
+            minlength="2"
+            required/>
+            <label for="last">Nom</label>
+						<input 
+            type="text"
+            id="last"
+            name="last"
+            minlength="2"
+            required/>
+            <label for="mail">Email</label>
+						<input 
+            type="email"
+            id="mail"
+            name="mail"
+            minlength="2"
+            required/>
+            <label for="message">Message</label>
+						<textarea 
+            type="textarea"
+            id="message"
+            name="message"
+            rows="10"
+            cols="78"
+            required>
+            </textarea>
 					</div>
-          <button class="contact_button">Envoyer</button>
+          <button class="contact_button" id="modalSend">Envoyer</button>
 				</form>
 			</div>
 		</div>
+    <div id="lightboxModal" aria-hidden="true">
+      <img src="assets/icons/close.svg" alt="Fermer le formulaire" role="img" id="closeButton"/>
+        <div id="slider">
+          <img id="selectLightbox" src="" alt="">
+          <video id="videoLightBox" src=""></video>
+          <div id="back"><</div>
+          <div id="next">></div>
+      </div>
+      <h3 id="titleImg"></h3>
+    </div>
+    </main>
+    
     <script src="/scripts/utils/contactForm.js"></script>
+    <script src="scripts/factories/photographer.js"></script>
+    <script src="scripts/factories/media.js"></script>
+    <script src="scripts/pages/index.js"></script>
+    <script src="scripts/pages/photographer.js"></script>
   </body>
 </html>
