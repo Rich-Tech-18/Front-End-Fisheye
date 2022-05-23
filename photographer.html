@@ -41,7 +41,7 @@
 			<div class="modal">
 				<header>
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" alt="Fermer le formulaire" role="img"/>
+          <img src="assets/icons/close.svg" onclick="closeModal()" alt="Fermer le formulaire" role="img" id="closeModal"/>
         </header>
 				<form id="modalDiv">
 					<div>
@@ -81,14 +81,14 @@
 			</div>
 		</div>
     <div id="lightboxModal" aria-hidden="true">
-      <img src="assets/icons/close.svg" alt="Fermer le formulaire" role="img" id="closeButton"/>
+      <img src="assets/icons/closeCaroussel.svg" alt="Fermer le carroussel" role="img" id="closeButton"/>
         <div id="slider">
           <img id="selectLightbox" src="" alt="">
           <video id="videoLightBox" src=""></video>
           <div id="back"><</div>
           <div id="next">></div>
       </div>
-      <h3 id="titleImg"></h3>
+      <h3 id="titleImg" aria-label="titre de l'image"> titre </h3>
     </div>
     </main>
     

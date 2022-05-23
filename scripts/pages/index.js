@@ -1,7 +1,7 @@
 async function getPhotographers() {
-    return fetch('../data/photographers.json')
+    return fetch("../data/photographers.json")
     .then(reponse =>  reponse.json())
-    .then( data  => {return data})
+    .then( data  => {return data;})
     .catch((err) => console.log(err));
             // Penser à remplacer par les données récupérées dans le json
         // const photographers = [
@@ -28,7 +28,7 @@ async function getPhotographers() {
         // return ({
         //     photographers: [...photographers, ...photographers, ...photographers]})
    
-};
+}
 
 // async function getMedia() {
 //     return fetch('../data/photographers.json')
@@ -44,21 +44,21 @@ async function displayData(photographers) {
     
 
     const photographersSection = document.querySelector(".photographer_section");
-    const whereMyId = new URL (window.location).searchParams.get('id');
+    const whereMyId = new URL (window.location).searchParams.get("id");
     const findMyId = parseInt(whereMyId);
     const arraySave = photographers.media;
     console.log(arraySave);
     
-    if(window.location.pathname === '/index.html'){
+    if(window.location.pathname === "/index.html"){
          photographers.photographers.forEach((photographer) => {
         const photographerModel = photographerFactory(photographer);
         const userCardDOM = photographerModel.getUserCardDOM();
         photographersSection.appendChild(userCardDOM);
     });
-    };
+    }
    
 
-    if(window.location.pathname === '/photographer.html'){
+    if(window.location.pathname === "/photographer.html"){
 
         // console.log('sans sort '+photographers.media);
         // photographers.media.sort(function(a, b){
@@ -71,10 +71,10 @@ async function displayData(photographers) {
         // console.log(photographers);
       
         let total = countLikes(photographers, findMyId);
-        const photographHeader = document.querySelector('.photograph-header')
+        const photographHeader = document.querySelector(".photograph-header");
         // const photographBody = document.querySelector('.photograph-body');
-        const photographPrice = document.querySelector('.photograph-price');
-        const modalHeadeName = document.querySelector('#modalDiv');
+        const photographPrice = document.querySelector(".photograph-price");
+        const modalHeadeName = document.querySelector("#modalDiv");
         
         photographers.photographers.forEach((photographer) =>{
             if (photographer.id === findMyId){
@@ -94,79 +94,133 @@ async function displayData(photographers) {
 
        
 
-    const next = document.querySelector('#next');
-    const back = document.querySelector('#back');
+    const next = document.querySelector("#next");
+    const back = document.querySelector("#back");
     
     
     
-    next.addEventListener('click', function(){
-        const sourceMedia = document.querySelectorAll('.photograph-body article');
-        const videoInModal = document.querySelector('#slider video');
-        const mediaInModal = document.querySelector('#lightboxModal #slider img');
-        const titleNext = document.querySelector('#titleImg');
+    next.addEventListener("click", function(){
+        const sourceMedia = document.querySelectorAll(".photograph-body article");
+        const videoInModal = document.querySelector("#slider video");
+        const mediaInModal = document.querySelector("#lightboxModal #slider img");
+        const titleNext = document.querySelector("#titleImg");
         let index = 0;
         for(let i=0; i<sourceMedia.length; i++){
-            if((mediaInModal.src || videoInModal.src) === ('http://127.0.0.1:5500/'+sourceMedia[i].dataset.path+sourceMedia[i].dataset.media)){
+            if((mediaInModal.src || videoInModal.src) === ("http://127.0.0.1:5500/"+sourceMedia[i].dataset.path+sourceMedia[i].dataset.media)){
                 index = i;
-            };
-        };
+            }
+        }
         index = index + 1;
         if(index === sourceMedia.length){
             index = 0;
             console.log(index);
-        };
-        mediaInModal.src = 'http://127.0.0.1:5500/'+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
-        videoInModal.src = 'http://127.0.0.1:5500/'+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
+        }
+        mediaInModal.src = "http://127.0.0.1:5500/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
+        videoInModal.src = "http://127.0.0.1:5500/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
         titleNext.textContent = sourceMedia[index].dataset.title;
-        if(sourceMedia[index].dataset.media.endsWith('.jpg')){
-            mediaInModal.style.display = 'block';
-            videoInModal.style.display ='none';
+        if(sourceMedia[index].dataset.media.endsWith(".jpg")){
+            mediaInModal.style.display = "block";
+            videoInModal.style.display ="none";
         }else{
-            mediaInModal.style.display = 'none';
-            videoInModal.style.display ='block';
+            mediaInModal.style.display = "none";
+            videoInModal.style.display ="block";
             videoInModal.setAttribute("controls", "controls");
-        };
+        }
     });
-    back.addEventListener('click', function(){
-        const sourceMedia = document.querySelectorAll('.photograph-body article');
-        const mediaInModal = document.querySelector('#lightboxModal #slider img');
-        const videoInModal = document.querySelector('#slider video');
-        const titleNext = document.querySelector('#titleImg');
+    back.addEventListener("click", function(){
+        const sourceMedia = document.querySelectorAll(".photograph-body article");
+        const mediaInModal = document.querySelector("#lightboxModal #slider img");
+        const videoInModal = document.querySelector("#slider video");
+        const titleNext = document.querySelector("#titleImg");
         let index = 0;
         for(let i=0; i<sourceMedia.length; i++){
-            if((mediaInModal.src || videoInModal.src) === ('http://127.0.0.1:5500/'+sourceMedia[i].dataset.path+sourceMedia[i].dataset.media)){
+            if((mediaInModal.src || videoInModal.src) === ("http://127.0.0.1:5500/"+sourceMedia[i].dataset.path+sourceMedia[i].dataset.media)){
                 index = i;
-            };
-        };
+            }
+        }
         index = index - 1;
         if(index < 0){
             index = sourceMedia.length -1;
             console.log(index);
-        };
-        mediaInModal.src = 'http://127.0.0.1:5500/'+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
-        videoInModal.src = 'http://127.0.0.1:5500/'+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
+        }
+        mediaInModal.src = "http://127.0.0.1:5500/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
+        videoInModal.src = "http://127.0.0.1:5500/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
         titleNext.textContent = sourceMedia[index].dataset.title;
-        if(sourceMedia[index].dataset.media.endsWith('.jpg')){
-            mediaInModal.style.display = 'block';
-            videoInModal.style.display ='none';
+        if(sourceMedia[index].dataset.media.endsWith(".jpg")){
+            mediaInModal.style.display = "block";
+            videoInModal.style.display ="none";
         }else{
-            mediaInModal.style.display = 'none';
-            videoInModal.style.display ='block';
+            mediaInModal.style.display = "none";
+            videoInModal.style.display ="block";
             videoInModal.setAttribute("controls", "controls");
-        };
+        }
         
         
     });
 
-    document.addEventListener('keydown', function(e){
+    document.addEventListener("keydown", function(e){
         if(e.keyCode === 39){
-            console.log('ok');
-        };
-    })
+            const sourceMedia = document.querySelectorAll(".photograph-body article");
+        const videoInModal = document.querySelector("#slider video");
+        const mediaInModal = document.querySelector("#lightboxModal #slider img");
+        const titleNext = document.querySelector("#titleImg");
+        let index = 0;
+        for(let i=0; i<sourceMedia.length; i++){
+            if((mediaInModal.src || videoInModal.src) === ("http://127.0.0.1:5500/"+sourceMedia[i].dataset.path+sourceMedia[i].dataset.media)){
+                index = i;
+            }
+        }
+        index = index + 1;
+        if(index === sourceMedia.length){
+            index = 0;
+            console.log(index);
+        }
+        mediaInModal.src = "http://127.0.0.1:5500/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
+        videoInModal.src = "http://127.0.0.1:5500/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
+        titleNext.textContent = sourceMedia[index].dataset.title;
+        if(sourceMedia[index].dataset.media.endsWith(".jpg")){
+            mediaInModal.style.display = "block";
+            videoInModal.style.display ="none";
+        }else{
+            mediaInModal.style.display = "none";
+            videoInModal.style.display ="block";
+            videoInModal.setAttribute("controls", "controls");
+        }
+        }
+    if(e.keyCode === 37){
+        const sourceMedia = document.querySelectorAll(".photograph-body article");
+        const mediaInModal = document.querySelector("#lightboxModal #slider img");
+        const videoInModal = document.querySelector("#slider video");
+        const titleNext = document.querySelector("#titleImg");
+        let index = 0;
+        for(let i=0; i<sourceMedia.length; i++){
+            if((mediaInModal.src || videoInModal.src) === ("http://127.0.0.1:5500/"+sourceMedia[i].dataset.path+sourceMedia[i].dataset.media)){
+                index = i;
+            }
+        }
+        index = index - 1;
+        if(index < 0){
+            index = sourceMedia.length -1;
+            console.log(index);
+        }
+        mediaInModal.src = "http://127.0.0.1:5500/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
+        videoInModal.src = "http://127.0.0.1:5500/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
+        titleNext.textContent = sourceMedia[index].dataset.title;
+        if(sourceMedia[index].dataset.media.endsWith(".jpg")){
+            mediaInModal.style.display = "block";
+            videoInModal.style.display ="none";
+        }else{
+            mediaInModal.style.display = "none";
+            videoInModal.style.display ="block";
+            videoInModal.setAttribute("controls", "controls");
+        }
+        
+    }
+    });
    
     
     // mediaFactory(photographers.media).totalCount(total);
-    const articles = Array.from(document.querySelectorAll('article'));
+    const articles = Array.from(document.querySelectorAll("article"));
     // const arrayForSort = [];
     // for(let i = 0; i<photographers.media.length; i++){
     //     if(photographers.media[i].photographerId === findMyId){
@@ -176,20 +230,20 @@ async function displayData(photographers) {
     // console.log(arrayForSort);
     const orderByPopulaire = articles.sort(function(a, b){
         if(a.likes > b.likes){
-            return -1
+            return -1;
         }else{
             return 1;
-        };
+        }
     });
     
     console.log(articles);
     console.log(orderByPopulaire);
-const selectOptionSort = document.getElementById('select-sort');
-    selectOptionSort.addEventListener('input', function(){
-        if(selectOptionSort.value === 'normal'){
+const selectOptionSort = document.getElementById("select-sort");
+    selectOptionSort.addEventListener("input", function(){
+        if(selectOptionSort.value === "normal"){
           
-        };
-        if(selectOptionSort.value === 'title'){
+        }
+        if(selectOptionSort.value === "title"){
             photographers.media.sort(function(a, b){
                     if (a.title < b.title){
                         return -1;
@@ -198,8 +252,8 @@ const selectOptionSort = document.getElementById('select-sort');
                     }
                 });
                 
-        };
-        if(selectOptionSort.value === 'date'){
+        }
+        if(selectOptionSort.value === "date"){
             photographers.media.sort(function(a, b){
                     if (a.date < b.date){
                         return -1;
@@ -208,18 +262,18 @@ const selectOptionSort = document.getElementById('select-sort');
                     }
                 });
                 
-        };
-        if(selectOptionSort.value === 'populaire'){
+        }
+        if(selectOptionSort.value === "populaire"){
           
                 photographers.media.sort(function(a, b){
                     if(a.likes > b.likes){
                         return -1;
                     }else{
                         return 1;
-                    };
+                    }
                 });
                 // articles[i].getAttribute('data-populaire').style.order = i;
-        };
+        }
         eraseMedia();
         eraseCount();
         displayMedia(photographers.media, findMyId);
@@ -232,15 +286,15 @@ const selectOptionSort = document.getElementById('select-sort');
 
 
     
-    const selectLike = document.querySelectorAll('.likesPhoto');
+    const selectLike = document.querySelectorAll(".likesPhoto");
     totalCount(total);
     // for (let i = 0; i < selectLike.length; i++){
     //     selectLike[i].addEventListener('click', function(){
     //      console.log(selectLike[i]);
     //  }, {once : true}); 
     //  };
-   };
-};
+   }
+}
 
 
 
@@ -254,6 +308,6 @@ async function init() {
     //      const media = await getMedia();
     //      displayData(media);
     // }
-};
+}
 
 init();

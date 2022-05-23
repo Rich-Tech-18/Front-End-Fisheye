@@ -1,27 +1,43 @@
 function displayModal() {
     const modal = document.getElementById("contact_modal");
+    modal.setAttribute("aria-hidden", "false");
 	modal.style.display = "block";
-};
+}
 
 function closeModal() {
     const modal = document.getElementById("contact_modal");
+    modal.setAttribute("aria-hidden", "true");
     modal.style.display = "none";
-};
+}
 
-const buttonModal = document.querySelector('#modalSend');
-const formulaireModal = document.querySelector('#modalDiv');
-const prenom = document.querySelector('#first');
-const nom = document.querySelector('#last');
-const mail = document.querySelector('#mail');
-const message = document.querySelector('#message');
+function closeLightBox(){
+    const lightBox = document.querySelector("#lightboxModal");
+    lightBox.setAttribute("aria-hidden", "true");
+    lightBox.style.display = "none";
+}
 
-buttonModal.addEventListener('click', function(event){
+document.addEventListener("keydown", function(e){
+    if(e.keyCode === 27){
+        closeModal();
+        closeLightBox();
+    }
+});
+
+
+const buttonModal = document.querySelector("#modalSend");
+const formulaireModal = document.querySelector("#modalDiv");
+const prenom = document.querySelector("#first");
+const nom = document.querySelector("#last");
+const mail = document.querySelector("#mail");
+const message = document.querySelector("#message");
+
+buttonModal.addEventListener("click", function(event){
     event.preventDefault();
-    console.log('Formulaire Envoyée');
-    console.log('---------------------------------');
-    console.log('Prénom : ' + prenom.value);
-    console.log('Nom : ' + nom.value);
-    console.log('mail : ' + mail.value);
-    console.log('message : ' + message.value);
+    console.log("Formulaire Envoyée");
+    console.log("---------------------------------");
+    console.log("Prénom : " + prenom.value);
+    console.log("Nom : " + nom.value);
+    console.log("mail : " + mail.value);
+    console.log("message : " + message.value);
     formulaireModal.reset();
 });

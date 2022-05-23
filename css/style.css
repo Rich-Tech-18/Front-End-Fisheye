@@ -86,3 +86,27 @@ h1 {
     font-size: 0.65rem;
     color: grey;
 }
+
+@media screen and (max-width: 425px) {
+    header {
+        flex-direction: column;
+
+    }
+
+    header a {
+        align-items: center;
+    }
+
+    .logo{
+        margin: 15px;
+    }
+
+    header h1 {
+        margin: 0;
+    }
+
+    .photographer_section {
+        display: flex;
+        flex-direction: column;
+    }
+}

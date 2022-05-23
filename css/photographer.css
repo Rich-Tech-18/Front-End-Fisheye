@@ -164,6 +164,7 @@ form input {
 .photograph-price{
     display: flex;
     justify-content: space-around;
+    align-items: center;
     background: #D3573C;
     width: 250px;
     height: 50px;
@@ -249,8 +250,9 @@ form input {
     opacity: 1; 
 }
 
-#flex{
+#totalCount{
     display: flex;
+    align-items: center;
 }
 
 #totalCount::after {
@@ -260,6 +262,8 @@ form input {
 
 .likesPhoto{
     cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
 .likesPhoto::after{
@@ -287,4 +291,63 @@ select{
 
 select option {
     color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .photograph-header{
+        margin: 0 50px;
+    }
+
+    .photograph-body{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 425px) {
+
+
+    .photograph-header{
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+    }
+    .photograph-body{
+        display: flex;
+        flex-direction: column;
+        margin: 50px 60px;
+    }
+    #order2{
+        order: 4;
+    }
+
+    .sortPhoto{
+        margin: 50px 100px;
+        flex-direction: column;
+    }
+
+    .sortPhoto select {
+        height: 50px;
+    }
+
+    .photograph-price{
+        left: 40%;
+    }
+
+    .modal{
+        width: auto;
+    }
+
+    .modal header {
+        display: flex;
+        flex-direction: initial;
+    }
+
+    .modal header h2 {
+        font-size: 36px;
+    }
+
+    .modal textarea {
+        width: 100%;
+    }
+
 }
