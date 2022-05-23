@@ -46,8 +46,8 @@ async function displayData(photographers) {
     const photographersSection = document.querySelector(".photographer_section");
     const whereMyId = new URL (window.location).searchParams.get("id");
     const findMyId = parseInt(whereMyId);
-    const arraySave = photographers.media;
-    console.log(arraySave);
+    // const arraySave = photographers.media;
+    // console.log(arraySave);
     
     if(window.location.pathname === "/index.html"){
          photographers.photographers.forEach((photographer) => {
@@ -228,16 +228,16 @@ async function displayData(photographers) {
     //     };
     // };
     // console.log(arrayForSort);
-    const orderByPopulaire = articles.sort(function(a, b){
-        if(a.likes > b.likes){
-            return -1;
-        }else{
-            return 1;
-        }
-    });
+    // const orderByPopulaire = articles.sort(function(a, b){
+    //     if(a.likes > b.likes){
+    //         return -1;
+    //     }else{
+    //         return 1;
+    //     }
+    // });
     
-    console.log(articles);
-    console.log(orderByPopulaire);
+    // console.log(articles);
+    // console.log(orderByPopulaire);
 const selectOptionSort = document.getElementById("select-sort");
     selectOptionSort.addEventListener("input", function(){
         if(selectOptionSort.value === "normal"){
@@ -286,7 +286,7 @@ const selectOptionSort = document.getElementById("select-sort");
 
 
     
-    const selectLike = document.querySelectorAll(".likesPhoto");
+    // const selectLike = document.querySelectorAll(".likesPhoto");
     totalCount(total);
     // for (let i = 0; i < selectLike.length; i++){
     //     selectLike[i].addEventListener('click', function(){

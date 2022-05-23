@@ -66,7 +66,9 @@ function displayMedia(array, id){
    for(let i = 0; i<article.length; i++){
                    article[i].setAttribute("id", i);
                    
-               }console.log(array.length);
+               }
+            //    console.log(array.length)
+               ;
 }
 
 function eraseMedia(){
@@ -91,7 +93,7 @@ function totalCount(numberLike){
     paraTotal.textContent = numberLike;
     paraTotal.setAttribute("id", "totalCount");
     divLike.appendChild(paraTotal);
-    console.log(numberLike);
+    // console.log(numberLike);
     return numberLike;  
         
 }

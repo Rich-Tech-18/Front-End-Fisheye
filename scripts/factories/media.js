@@ -41,10 +41,10 @@ function mediaFactory(data) {
                 img.setAttribute("data-id", id);
                 
                 article.setAttribute("data-media", image);
-                linkLightBox.setAttribute("href", "#");
-                linkLightBox.setAttribute("aria-label", "lance la lightbox");
-                linkLightBox.appendChild(img);
-                article.appendChild(linkLightBox);
+                // linkLightBox.setAttribute("href", "#");
+                // linkLightBox.setAttribute("aria-label", "lance la lightbox");
+                article.appendChild(img);
+                // article.appendChild(linkLightBox);
                 img.addEventListener("click", function(){
                     const lightBox = document.querySelector("#lightboxModal");
                     const mediaBox = document.querySelector("#selectLightbox");
@@ -64,28 +64,28 @@ function mediaFactory(data) {
                     lightBox.style.display = "flex";
                 });
 
-                document.addEventListener("keydown", function(e){
-                    if(e.keyCode === 17){
-                        console.log("of");
-                      const lightBox = document.querySelector("#lightboxModal");
-                    const mediaBox = document.querySelector("#selectLightbox");
-                    const displayVideo = document.querySelector("#slider video");
-                    const displayImage = document.querySelector("#slider img");
-                    const idTitle = document.querySelector("#titleImg");
-                    displayImage.style.display = "block";
-                    displayVideo.style.display = "none";
-                    mediaBox.setAttribute("src", mediaFind.replaceAll(" ", "_"));
-                    mediaBox.setAttribute("alt", "portrait de "+ title);
-                    mediaBox.setAttribute("aria-label", "photo de " + title);
-                    mediaBox.setAttribute("role", "img");
-                    mediaBox.setAttribute("data-id", id);
-                    lightBox.setAttribute("aria-hidden", false);
-                    idTitle.textContent = title;
-                    lightBox.appendChild(idTitle);
-                    lightBox.style.display = "flex";  
-                    }
+                // document.addEventListener("keydown", function(e){
+                //     if(e.keyCode === 17){
+                //         console.log("of");
+                //       const lightBox = document.querySelector("#lightboxModal");
+                //     const mediaBox = document.querySelector("#selectLightbox");
+                //     const displayVideo = document.querySelector("#slider video");
+                //     const displayImage = document.querySelector("#slider img");
+                //     const idTitle = document.querySelector("#titleImg");
+                //     displayImage.style.display = "block";
+                //     displayVideo.style.display = "none";
+                //     mediaBox.setAttribute("src", mediaFind.replaceAll(" ", "_"));
+                //     mediaBox.setAttribute("alt", "portrait de "+ title);
+                //     mediaBox.setAttribute("aria-label", "photo de " + title);
+                //     mediaBox.setAttribute("role", "img");
+                //     mediaBox.setAttribute("data-id", id);
+                //     lightBox.setAttribute("aria-hidden", false);
+                //     idTitle.textContent = title;
+                //     lightBox.appendChild(idTitle);
+                //     lightBox.style.display = "flex";  
+                //     }
                     
-                });
+                // });
                 
             }
             
@@ -98,10 +98,10 @@ function mediaFactory(data) {
                 article.setAttribute("data-media", video);
                 source.setAttribute("src", videoFind);
                 vids.appendChild(source);
-                linkLightBox.appendChild(vids);
-                linkLightBox.setAttribute("href", "#");
-                linkLightBox.setAttribute("aria-label", "lance la lightbox");
-                article.appendChild(linkLightBox);
+                article.appendChild(vids);
+                // linkLightBox.setAttribute("href", "#");
+                // linkLightBox.setAttribute("aria-label", "lance la lightbox");
+                // article.appendChild(linkLightBox);
 
 
                 vids.addEventListener("click", function(){
@@ -109,6 +109,8 @@ function mediaFactory(data) {
                 const lightBox = document.querySelector("#lightboxModal");
                 const displayVideo = document.querySelector("#slider video");
                 const displayImage = document.querySelector("#slider img");
+                const idTitle = document.querySelector("#titleImg");
+                idTitle.textContent = title;
                 displayImage.style.display = "none";
                 displayVideo.style.display = "block";
                 videoBox.setAttribute("src", videoFind.replaceAll(" ", "_"));
