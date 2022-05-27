@@ -36,7 +36,7 @@ async function displayData(photographers) {
     }
    
 
-    if(window.location.pathname === "/photographer.html"){
+    if(window.location.pathname === "/Front-End-Fisheye/photographer.html"){
 
         // console.log('sans sort '+photographers.media);
         // photographers.media.sort(function(a, b){
