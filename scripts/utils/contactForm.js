@@ -4,11 +4,17 @@ function displayModal() {
 	modal.style.display = "block";
 }
 
+const openModal = document.querySelectorAll(".contact_button");
+openModal[0].addEventListener("click", displayModal);
+
 function closeModal() {
     const modal = document.getElementById("contact_modal");
     modal.setAttribute("aria-hidden", "true");
     modal.style.display = "none";
 }
+
+const closeModalImage = document.querySelector("#closeModal");
+closeModalImage.addEventListener("click", closeModal);
 
 function closeLightBox(){
     const lightBox = document.querySelector("#lightboxModal");
@@ -41,3 +47,11 @@ buttonModal.addEventListener("click", function(event){
     console.log("message : " + message.value);
     formulaireModal.reset();
 });
+
+const closeButton = document.querySelector("#closeButton");
+closeButton.addEventListener("click", function(){
+    const lightBox = document.querySelector("#lightboxModal");
+    lightBox.style.display = "none";
+    lightBox.setAttribute("aria-hidden", true);
+});
+

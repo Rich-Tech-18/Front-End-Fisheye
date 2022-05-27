@@ -1,33 +1,11 @@
+import {eraseCount, totalCount, countLikes, eraseMedia, displayMedia} from "./photographer.js";
+import {photographerFactory} from "../factories/photographer.js";
+
 async function getPhotographers() {
     return fetch("../data/photographers.json")
     .then(reponse =>  reponse.json())
     .then( data  => {return data;})
     .catch((err) => console.log(err));
-            // Penser à remplacer par les données récupérées dans le json
-        // const photographers = [
-        //     {
-        //         "name": "Ma data test",
-        //         "id": 1,
-        //         "city": "Paris",
-        //         "country": "France",
-        //         "tagline": "Ceci est ma data test",
-        //         "price": 400,
-        //         "portrait": "account.png"
-        //     },
-        //     {
-        //         "name": "Autre data test",
-        //         "id": 2,
-        //         "city": "Londres",
-        //         "country": "UK",
-        //         "tagline": "Ceci est ma data test 2",
-        //         "price": 500,
-        //         "portrait": "account.png"
-        //     },
-        // ]
-        // et bien retourner le tableau photographers seulement une fois
-        // return ({
-        //     photographers: [...photographers, ...photographers, ...photographers]})
-   
 }
 
 // async function getMedia() {
@@ -220,7 +198,7 @@ async function displayData(photographers) {
    
     
     // mediaFactory(photographers.media).totalCount(total);
-    const articles = Array.from(document.querySelectorAll("article"));
+    // const articles = Array.from(document.querySelectorAll("article"));
     // const arrayForSort = [];
     // for(let i = 0; i<photographers.media.length; i++){
     //     if(photographers.media[i].photographerId === findMyId){
@@ -240,9 +218,9 @@ async function displayData(photographers) {
     // console.log(orderByPopulaire);
 const selectOptionSort = document.getElementById("select-sort");
     selectOptionSort.addEventListener("input", function(){
-        if(selectOptionSort.value === "normal"){
+        // if(selectOptionSort.value === "normal"){
           
-        }
+        // }
         if(selectOptionSort.value === "title"){
             photographers.media.sort(function(a, b){
                     if (a.title < b.title){
