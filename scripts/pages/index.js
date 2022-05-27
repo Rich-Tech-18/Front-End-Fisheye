@@ -4,7 +4,7 @@ import {photographerFactory} from "../factories/photographer.js";
 async function getPhotographers() {
     return fetch("https://rich-tech-18.github.io/Front-End-Fisheye/data/photographers.json")
     .then(reponse =>  reponse.json())
-    .then( data  => {console.log(data); return data;})
+    .then( data  => {return data;})
     .catch((err) => console.log(err));
 }
 
@@ -84,7 +84,7 @@ async function displayData(photographers) {
         const titleNext = document.querySelector("#titleImg");
         let index = 0;
         for(let i=0; i<sourceMedia.length; i++){
-            if((mediaInModal.src || videoInModal.src) === ("http://127.0.0.1:5500/"+sourceMedia[i].dataset.path+sourceMedia[i].dataset.media)){
+            if((mediaInModal.src || videoInModal.src) === ("https://rich-tech-18.github.io/Front-End-Fisheye/"+sourceMedia[i].dataset.path+sourceMedia[i].dataset.media)){
                 index = i;
             }
         }
@@ -93,8 +93,8 @@ async function displayData(photographers) {
             index = 0;
             console.log(index);
         }
-        mediaInModal.src = "http://127.0.0.1:5500/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
-        videoInModal.src = "http://127.0.0.1:5500/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
+        mediaInModal.src = "https://rich-tech-18.github.io/Front-End-Fisheye/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
+        videoInModal.src = "https://rich-tech-18.github.io/Front-End-Fisheye/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
         titleNext.textContent = sourceMedia[index].dataset.title;
         if(sourceMedia[index].dataset.media.endsWith(".jpg")){
             mediaInModal.style.display = "block";
@@ -112,7 +112,7 @@ async function displayData(photographers) {
         const titleNext = document.querySelector("#titleImg");
         let index = 0;
         for(let i=0; i<sourceMedia.length; i++){
-            if((mediaInModal.src || videoInModal.src) === ("http://127.0.0.1:5500/"+sourceMedia[i].dataset.path+sourceMedia[i].dataset.media)){
+            if((mediaInModal.src || videoInModal.src) === ("https://rich-tech-18.github.io/Front-End-Fisheye/"+sourceMedia[i].dataset.path+sourceMedia[i].dataset.media)){
                 index = i;
             }
         }
@@ -121,8 +121,8 @@ async function displayData(photographers) {
             index = sourceMedia.length -1;
             console.log(index);
         }
-        mediaInModal.src = "http://127.0.0.1:5500/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
-        videoInModal.src = "http://127.0.0.1:5500/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
+        mediaInModal.src = "https://rich-tech-18.github.io/Front-End-Fisheye/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
+        videoInModal.src = "https://rich-tech-18.github.io/Front-End-Fisheye/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
         titleNext.textContent = sourceMedia[index].dataset.title;
         if(sourceMedia[index].dataset.media.endsWith(".jpg")){
             mediaInModal.style.display = "block";
@@ -144,7 +144,7 @@ async function displayData(photographers) {
         const titleNext = document.querySelector("#titleImg");
         let index = 0;
         for(let i=0; i<sourceMedia.length; i++){
-            if((mediaInModal.src || videoInModal.src) === ("http://127.0.0.1:5500/"+sourceMedia[i].dataset.path+sourceMedia[i].dataset.media)){
+            if((mediaInModal.src || videoInModal.src) === ("https://rich-tech-18.github.io/Front-End-Fisheye/"+sourceMedia[i].dataset.path+sourceMedia[i].dataset.media)){
                 index = i;
             }
         }
@@ -153,8 +153,8 @@ async function displayData(photographers) {
             index = 0;
             console.log(index);
         }
-        mediaInModal.src = "http://127.0.0.1:5500/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
-        videoInModal.src = "http://127.0.0.1:5500/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
+        mediaInModal.src = "https://rich-tech-18.github.io/Front-End-Fisheye/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
+        videoInModal.src = "https://rich-tech-18.github.io/Front-End-Fisheye/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
         titleNext.textContent = sourceMedia[index].dataset.title;
         if(sourceMedia[index].dataset.media.endsWith(".jpg")){
             mediaInModal.style.display = "block";
@@ -172,7 +172,7 @@ async function displayData(photographers) {
         const titleNext = document.querySelector("#titleImg");
         let index = 0;
         for(let i=0; i<sourceMedia.length; i++){
-            if((mediaInModal.src || videoInModal.src) === ("http://127.0.0.1:5500/"+sourceMedia[i].dataset.path+sourceMedia[i].dataset.media)){
+            if((mediaInModal.src || videoInModal.src) === ("https://rich-tech-18.github.io/Front-End-Fisheye/"+sourceMedia[i].dataset.path+sourceMedia[i].dataset.media)){
                 index = i;
             }
         }
@@ -181,8 +181,8 @@ async function displayData(photographers) {
             index = sourceMedia.length -1;
             console.log(index);
         }
-        mediaInModal.src = "http://127.0.0.1:5500/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
-        videoInModal.src = "http://127.0.0.1:5500/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
+        mediaInModal.src = "https://rich-tech-18.github.io/Front-End-Fisheye/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
+        videoInModal.src = "https://rich-tech-18.github.io/Front-End-Fisheye/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
         titleNext.textContent = sourceMedia[index].dataset.title;
         if(sourceMedia[index].dataset.media.endsWith(".jpg")){
             mediaInModal.style.display = "block";
