@@ -1,4 +1,4 @@
-import { mediaFactory } from "../factories/media.js";
+import { mediaFactory } from "https://rich-tech-18.github.io/Front-End-Fisheye/scripts/factories/media.js";
 
 export function countLikes(photograph, id){
     let sum = 0;

@@ -1,5 +1,5 @@
-import {eraseCount, totalCount, countLikes, eraseMedia, displayMedia} from "./photographer.js";
-import {photographerFactory} from "../factories/photographer.js";
+import {eraseCount, totalCount, countLikes, eraseMedia, displayMedia} from "https://rich-tech-18.github.io/Front-End-Fisheye/scripts/pages/photographer.js";
+import {photographerFactory} from "https://rich-tech-18.github.io/Front-End-Fisheye/scripts/factories/photographer.js";
 
 async function getPhotographers() {
     return fetch("https://rich-tech-18.github.io/Front-End-Fisheye/data/photographers.json")
