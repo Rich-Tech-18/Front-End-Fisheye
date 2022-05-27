@@ -4,7 +4,7 @@ import {photographerFactory} from "../factories/photographer.js";
 async function getPhotographers() {
     return fetch("https://rich-tech-18.github.io/Front-End-Fisheye/data/photographers.json")
     .then(reponse =>  reponse.json())
-    .then( data  => {return data;})
+    .then( data  => {console.log(data); return data;})
     .catch((err) => console.log(err));
 }
 
