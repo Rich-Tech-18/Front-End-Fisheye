@@ -2,7 +2,7 @@ export function photographerFactory(data) {
     const { name, portrait, id, city, country, tagline, price} = data;
 
     const picture = `assets/photographers/Photographers_ID_Photos/${portrait}`;
-    const url  = (new URL(`/photographer.html?id=${id}`, "http://127.0.0.1:5500"));
+    const url  = (new URL(`/photographer.html?id=${id}`, "https://rich-tech-18.github.io/Front-End-Fisheye"));
     // const searchParam = url.searchParams;
     // const getID = searchParam.get('id');
     // const getToNumber = parseInt(getID);
