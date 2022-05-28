@@ -103,6 +103,3 @@ function eraseCount(){
     const totalCount = document.querySelector("#totalCount");
     divLike.removeChild(totalCount);
 }
-
-
-

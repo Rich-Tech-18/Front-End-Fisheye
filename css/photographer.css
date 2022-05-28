@@ -105,6 +105,10 @@ form input {
 #order2{
     order: 2;
     text-align: center;
+    font-size: 1.05rem;
+    width: 160px;
+    font-weight: 500;
+    height: 50px;
 }
 
 #order3{
@@ -117,6 +121,10 @@ form input {
     margin: 0 100px;
 }
 
+.sortPhoto label p {
+    font-weight: bold;
+    padding-right: 35px;
+}
 
 .photograph-body{
     display: grid;
@@ -282,15 +290,54 @@ form input {
     padding-right: 900px;
 }
 
-select{
+#select-sort{
     background-color: #901C1C;
     color: white;
     border: none;
     border-radius: 5px;
+    width: 125px;
+    height: 50px;
+    appearance: none;
+    padding-left: 15px;
+    
+}
+
+#select-sort option:last-child{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.downChevron{
+  background-image: url('../assets/icons/down.svg') !important;
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;  
+}
+
+.upChevron{
+    appearance: none;
+    background-image: url('../assets/icons/up.svg') !important;
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
 }
 
 select option {
     color: white;
+}
+
+.arrow::after{
+    position: relative;
+    content: "v";
+    color: white;
+
+
+}
+
+#colorTitle{
+    color: #D3573C;
+    font-size: 3rem;
+    margin: 0;
 }
 
 @media screen and (max-width: 768px) {

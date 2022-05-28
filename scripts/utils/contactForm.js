@@ -41,3 +41,25 @@ buttonModal.addEventListener("click", function(event){
     console.log("message : " + message.value);
     formulaireModal.reset();
 });
+
+const buttonSelect = document.querySelector("#select-sort");
+buttonSelect.classList.add('downChevron');
+
+buttonSelect.addEventListener('click', function(e){
+    e.stopPropagation();
+    if(buttonSelect.className === 'downChevron'){
+        buttonSelect.classList.remove('downChevron');
+        buttonSelect.classList.add('upChevron');
+    }else{
+        buttonSelect.classList.remove('upChevron');
+        buttonSelect.classList.add('downChevron');
+    }
+
+});
+const body = document.querySelector('body');
+body.onclick = function(){
+    if(buttonSelect.className === 'upChevron'){
+        buttonSelect.classList.remove('upChevron');
+        buttonSelect.classList.add('downChevron');
+    }
+}

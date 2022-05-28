@@ -44,6 +44,7 @@ function photographerFactory(data) {
         const button = document.querySelectorAll(".contact_button");
         button[0].setAttribute("id", "order2");
         const h2 = document.createElement( "h2" );
+        h2.id = "colorTitle";
         h2.textContent = name;
         const location = document.createElement("p");
         location.classList.add("location");
