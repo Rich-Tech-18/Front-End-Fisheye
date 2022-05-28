@@ -216,12 +216,13 @@ async function displayData(photographers) {
     
     // console.log(articles);
     // console.log(orderByPopulaire);
-const selectOptionSort = document.getElementById("select-sort");
-    selectOptionSort.addEventListener("input", function(){
+    const selectOptionSort = document.querySelector(".select-menu");
+    selectOptionSort.addEventListener("click", function(){
+        const textSelect = document.querySelector(".sBtn-text");
         // if(selectOptionSort.value === "normal"){
           
         // }
-        if(selectOptionSort.value === "title"){
+        if(textSelect.innerText === "Titre"){
             photographers.media.sort(function(a, b){
                     if (a.title < b.title){
                         return -1;
@@ -231,7 +232,7 @@ const selectOptionSort = document.getElementById("select-sort");
                 });
                 
         }
-        if(selectOptionSort.value === "date"){
+        if(textSelect.innerText === "Date"){
             photographers.media.sort(function(a, b){
                     if (a.date < b.date){
                         return -1;
@@ -241,7 +242,7 @@ const selectOptionSort = document.getElementById("select-sort");
                 });
                 
         }
-        if(selectOptionSort.value === "populaire"){
+        if(textSelect.innerText === "Populaire"){
           
                 photographers.media.sort(function(a, b){
                     if(a.likes > b.likes){
@@ -257,6 +258,7 @@ const selectOptionSort = document.getElementById("select-sort");
         displayMedia(photographers.media, findMyId);
         totalCount(total);
     });
+
 
 
 

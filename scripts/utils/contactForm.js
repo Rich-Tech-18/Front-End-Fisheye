@@ -48,31 +48,46 @@ buttonModal.addEventListener("click", function(event){
     formulaireModal.reset();
 });
 
-const buttonSelect = document.querySelector("#select-sort");
-buttonSelect.classList.add('downChevron');
+// const buttonSelect = document.querySelector("#select-sort");
+// buttonSelect.classList.add('downChevron');
 
-buttonSelect.addEventListener('click', function(e){
-    e.stopPropagation();
-    if(buttonSelect.className === 'downChevron'){
-        buttonSelect.classList.remove('downChevron');
-        buttonSelect.classList.add('upChevron');
-    }else{
-        buttonSelect.classList.remove('upChevron');
-        buttonSelect.classList.add('downChevron');
-    }
+// buttonSelect.addEventListener('click', function(e){
+//     e.stopPropagation();
+//     if(buttonSelect.className === 'downChevron'){
+//         buttonSelect.classList.remove('downChevron');
+//         buttonSelect.classList.add('upChevron');
+//     }else{
+//         buttonSelect.classList.remove('upChevron');
+//         buttonSelect.classList.add('downChevron');
+//     }
 
-});
-const body = document.querySelector('body');
-body.onclick = function(){
-    if(buttonSelect.className === 'upChevron'){
-        buttonSelect.classList.remove('upChevron');
-        buttonSelect.classList.add('downChevron');
-    }
-}
-const closeButton = document.querySelector("#closeButton");
-closeButton.addEventListener("click", function(){
-    const lightBox = document.querySelector("#lightboxModal");
-    lightBox.style.display = "none";
-    lightBox.setAttribute("aria-hidden", true);
+// });
+// const body = document.querySelector('body');
+// body.onclick = function(){
+//     if(buttonSelect.className === 'upChevron'){
+//         buttonSelect.classList.remove('upChevron');
+//         buttonSelect.classList.add('downChevron');
+//     }
+// }
+// const closeButton = document.querySelector("#closeButton");
+// closeButton.addEventListener("click", function(){
+//     const lightBox = document.querySelector("#lightboxModal");
+//     lightBox.style.display = "none";
+//     lightBox.setAttribute("aria-hidden", true);
+// });
+
+const optionMenu = document.querySelector(".select-menu");
+const selectBtn = document.querySelector(".select-btn");
+const options = document.querySelectorAll(".option");
+const selectBtnText = document.querySelector(".sBtn-text");
+
+selectBtn.addEventListener("click", () => optionMenu.classList.toggle("active"));
+
+options.forEach(option => {
+    option.addEventListener("click", () => {
+        let selectedOption = option.querySelector(".option-text").innerText;
+        selectBtnText.innerText = selectedOption;
+        optionMenu.classList.remove("active");
+    });
 });
 
