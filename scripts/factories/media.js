@@ -1,11 +1,11 @@
-function mediaFactory(data) {
+export function mediaFactory(data) {
     let { id, photographerId, title, image, likes, date, price, video} = data;
 
 
     function getMediaCardDOM() {
         let name = "";
         const div = document.createElement("div");
-        const linkLightBox = document.createElement("a");
+        // const linkLightBox = document.createElement("a");
         // const divFlex = document.createElement('div');
         const article = document.createElement( "article" );
         const img = document.createElement( "img" );

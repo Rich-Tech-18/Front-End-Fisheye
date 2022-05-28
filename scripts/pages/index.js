@@ -1,33 +1,11 @@
+import {eraseCount, totalCount, countLikes, eraseMedia, displayMedia} from "https://rich-tech-18.github.io/Front-End-Fisheye/scripts/pages/photographer.js";
+import {photographerFactory} from "https://rich-tech-18.github.io/Front-End-Fisheye/scripts/factories/photographer.js";
+
 async function getPhotographers() {
-    return fetch("../data/photographers.json")
+    return fetch("https://rich-tech-18.github.io/Front-End-Fisheye/data/photographers.json")
     .then(reponse =>  reponse.json())
     .then( data  => {return data;})
     .catch((err) => console.log(err));
-            // Penser à remplacer par les données récupérées dans le json
-        // const photographers = [
-        //     {
-        //         "name": "Ma data test",
-        //         "id": 1,
-        //         "city": "Paris",
-        //         "country": "France",
-        //         "tagline": "Ceci est ma data test",
-        //         "price": 400,
-        //         "portrait": "account.png"
-        //     },
-        //     {
-        //         "name": "Autre data test",
-        //         "id": 2,
-        //         "city": "Londres",
-        //         "country": "UK",
-        //         "tagline": "Ceci est ma data test 2",
-        //         "price": 500,
-        //         "portrait": "account.png"
-        //     },
-        // ]
-        // et bien retourner le tableau photographers seulement une fois
-        // return ({
-        //     photographers: [...photographers, ...photographers, ...photographers]})
-   
 }
 
 // async function getMedia() {
@@ -49,7 +27,7 @@ async function displayData(photographers) {
     // const arraySave = photographers.media;
     // console.log(arraySave);
     
-    if(window.location.pathname === "/index.html"){
+    if(window.location.pathname === "/Front-End-Fisheye/index.html"){
          photographers.photographers.forEach((photographer) => {
         const photographerModel = photographerFactory(photographer);
         const userCardDOM = photographerModel.getUserCardDOM();
@@ -58,7 +36,7 @@ async function displayData(photographers) {
     }
    
 
-    if(window.location.pathname === "/photographer.html"){
+    if(window.location.pathname === "/Front-End-Fisheye/photographer.html"){
 
         // console.log('sans sort '+photographers.media);
         // photographers.media.sort(function(a, b){
@@ -106,7 +84,7 @@ async function displayData(photographers) {
         const titleNext = document.querySelector("#titleImg");
         let index = 0;
         for(let i=0; i<sourceMedia.length; i++){
-            if((mediaInModal.src || videoInModal.src) === ("http://127.0.0.1:5500/"+sourceMedia[i].dataset.path+sourceMedia[i].dataset.media)){
+            if((mediaInModal.src || videoInModal.src) === ("https://rich-tech-18.github.io/Front-End-Fisheye/"+sourceMedia[i].dataset.path+sourceMedia[i].dataset.media)){
                 index = i;
             }
         }
@@ -115,8 +93,8 @@ async function displayData(photographers) {
             index = 0;
             console.log(index);
         }
-        mediaInModal.src = "http://127.0.0.1:5500/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
-        videoInModal.src = "http://127.0.0.1:5500/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
+        mediaInModal.src = "https://rich-tech-18.github.io/Front-End-Fisheye/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
+        videoInModal.src = "https://rich-tech-18.github.io/Front-End-Fisheye/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
         titleNext.textContent = sourceMedia[index].dataset.title;
         if(sourceMedia[index].dataset.media.endsWith(".jpg")){
             mediaInModal.style.display = "block";
@@ -134,7 +112,7 @@ async function displayData(photographers) {
         const titleNext = document.querySelector("#titleImg");
         let index = 0;
         for(let i=0; i<sourceMedia.length; i++){
-            if((mediaInModal.src || videoInModal.src) === ("http://127.0.0.1:5500/"+sourceMedia[i].dataset.path+sourceMedia[i].dataset.media)){
+            if((mediaInModal.src || videoInModal.src) === ("https://rich-tech-18.github.io/Front-End-Fisheye/"+sourceMedia[i].dataset.path+sourceMedia[i].dataset.media)){
                 index = i;
             }
         }
@@ -143,8 +121,8 @@ async function displayData(photographers) {
             index = sourceMedia.length -1;
             console.log(index);
         }
-        mediaInModal.src = "http://127.0.0.1:5500/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
-        videoInModal.src = "http://127.0.0.1:5500/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
+        mediaInModal.src = "https://rich-tech-18.github.io/Front-End-Fisheye/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
+        videoInModal.src = "https://rich-tech-18.github.io/Front-End-Fisheye/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
         titleNext.textContent = sourceMedia[index].dataset.title;
         if(sourceMedia[index].dataset.media.endsWith(".jpg")){
             mediaInModal.style.display = "block";
@@ -166,7 +144,7 @@ async function displayData(photographers) {
         const titleNext = document.querySelector("#titleImg");
         let index = 0;
         for(let i=0; i<sourceMedia.length; i++){
-            if((mediaInModal.src || videoInModal.src) === ("http://127.0.0.1:5500/"+sourceMedia[i].dataset.path+sourceMedia[i].dataset.media)){
+            if((mediaInModal.src || videoInModal.src) === ("https://rich-tech-18.github.io/Front-End-Fisheye/"+sourceMedia[i].dataset.path+sourceMedia[i].dataset.media)){
                 index = i;
             }
         }
@@ -175,8 +153,8 @@ async function displayData(photographers) {
             index = 0;
             console.log(index);
         }
-        mediaInModal.src = "http://127.0.0.1:5500/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
-        videoInModal.src = "http://127.0.0.1:5500/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
+        mediaInModal.src = "https://rich-tech-18.github.io/Front-End-Fisheye/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
+        videoInModal.src = "https://rich-tech-18.github.io/Front-End-Fisheye/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
         titleNext.textContent = sourceMedia[index].dataset.title;
         if(sourceMedia[index].dataset.media.endsWith(".jpg")){
             mediaInModal.style.display = "block";
@@ -194,7 +172,7 @@ async function displayData(photographers) {
         const titleNext = document.querySelector("#titleImg");
         let index = 0;
         for(let i=0; i<sourceMedia.length; i++){
-            if((mediaInModal.src || videoInModal.src) === ("http://127.0.0.1:5500/"+sourceMedia[i].dataset.path+sourceMedia[i].dataset.media)){
+            if((mediaInModal.src || videoInModal.src) === ("https://rich-tech-18.github.io/Front-End-Fisheye/"+sourceMedia[i].dataset.path+sourceMedia[i].dataset.media)){
                 index = i;
             }
         }
@@ -203,8 +181,8 @@ async function displayData(photographers) {
             index = sourceMedia.length -1;
             console.log(index);
         }
-        mediaInModal.src = "http://127.0.0.1:5500/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
-        videoInModal.src = "http://127.0.0.1:5500/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
+        mediaInModal.src = "https://rich-tech-18.github.io/Front-End-Fisheye/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
+        videoInModal.src = "https://rich-tech-18.github.io/Front-End-Fisheye/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
         titleNext.textContent = sourceMedia[index].dataset.title;
         if(sourceMedia[index].dataset.media.endsWith(".jpg")){
             mediaInModal.style.display = "block";
@@ -220,7 +198,7 @@ async function displayData(photographers) {
    
     
     // mediaFactory(photographers.media).totalCount(total);
-    const articles = Array.from(document.querySelectorAll("article"));
+    // const articles = Array.from(document.querySelectorAll("article"));
     // const arrayForSort = [];
     // for(let i = 0; i<photographers.media.length; i++){
     //     if(photographers.media[i].photographerId === findMyId){
@@ -240,9 +218,9 @@ async function displayData(photographers) {
     // console.log(orderByPopulaire);
 const selectOptionSort = document.getElementById("select-sort");
     selectOptionSort.addEventListener("input", function(){
-        if(selectOptionSort.value === "normal"){
+        // if(selectOptionSort.value === "normal"){
           
-        }
+        // }
         if(selectOptionSort.value === "title"){
             photographers.media.sort(function(a, b){
                     if (a.title < b.title){

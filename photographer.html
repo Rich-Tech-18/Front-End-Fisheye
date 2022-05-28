@@ -14,7 +14,7 @@
     </header>
     <main id="main">
       <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <button class="contact_button">Contactez-moi</button>
       </div>
       <div class="sortPhoto">
           <label for="select-sort">
@@ -43,7 +43,7 @@
 			<div class="modal">
 				<header>
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" alt="Fermer le formulaire" role="img" id="closeModal"/>
+          <img src="assets/icons/close.svg" alt="Fermer le formulaire" role="img" id="closeModal"/>
         </header>
 				<form id="modalDiv">
 					<div>
@@ -94,10 +94,11 @@
     </div>
     </main>
     
-    <script src="/scripts/utils/contactForm.js"></script>
-    <script src="scripts/factories/photographer.js"></script>
-    <script src="scripts/factories/media.js"></script>
-    <script src="scripts/pages/index.js"></script>
-    <script src="scripts/pages/photographer.js"></script>
+    <script type="module" src="https://rich-tech-18.github.io/Front-End-Fisheye/scripts/utils/contactForm.js"></script>
+    <script type="module" src="https://rich-tech-18.github.io/Front-End-Fisheye/scripts/factories/photographer.js"></script>
+    <script type="module" src="https://rich-tech-18.github.io/Front-End-Fisheye/scripts/factories/media.js"></script>
+    <script type="module" src="https://rich-tech-18.github.io/Front-End-Fisheye/scripts/pages/photographer.js"></script>
+    <script type="module" src="https://rich-tech-18.github.io/Front-End-Fisheye/scripts/pages/index.js"></script>
+    
   </body>
 </html>
