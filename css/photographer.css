@@ -406,6 +406,7 @@ select option {
 
 .options .option:hover {
     background: #D3573C;
+    border-radius: 8px;
 }
 
 .option .option-text{
