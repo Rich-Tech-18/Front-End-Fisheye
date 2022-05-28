@@ -198,6 +198,7 @@ form input {
     z-index: 1;
     left: 0;
     background: white;
+    overflow: hidden;
 }
 
 #closeButton{
