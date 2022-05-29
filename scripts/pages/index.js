@@ -27,7 +27,7 @@ async function displayData(photographers) {
     // const arraySave = photographers.media;
     // console.log(arraySave);
     
-    if(window.location.pathname === "/Front-End-Fisheye/"){
+    if(window.location.pathname === "/Front-End-Fisheye/" || window.location.pathname === "/Front-End-Fisheye/index.html"){
          photographers.photographers.forEach((photographer) => {
         const photographerModel = photographerFactory(photographer);
         const userCardDOM = photographerModel.getUserCardDOM();
