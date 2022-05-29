@@ -69,12 +69,12 @@ buttonModal.addEventListener("click", function(event){
 //         buttonSelect.classList.add('downChevron');
 //     }
 // }
-// const closeButton = document.querySelector("#closeButton");
-// closeButton.addEventListener("click", function(){
-//     const lightBox = document.querySelector("#lightboxModal");
-//     lightBox.style.display = "none";
-//     lightBox.setAttribute("aria-hidden", true);
-// });
+const closeButton = document.querySelector("#closeButton");
+closeButton.addEventListener("click", function(){
+    const lightBox = document.querySelector("#lightboxModal");
+    lightBox.style.display = "none";
+    lightBox.setAttribute("aria-hidden", true);
+});
 
 const optionMenu = document.querySelector(".select-menu");
 const selectBtn = document.querySelector(".select-btn");
