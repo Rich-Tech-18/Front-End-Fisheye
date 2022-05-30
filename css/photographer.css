@@ -19,8 +19,8 @@
     justify-content: space-around;
     align-items: center;
     background-color: #FAFAFA;
-    height: 300px;
-    margin: 0 50px;
+    height: 20em;
+    margin: 0 10em;
 }
 
 .contact_button {
@@ -128,8 +128,8 @@ form input {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     /* gap: 70px; */
-    gap: 10px;
-    margin: 50px 50px;
+    /* gap: 10px; */
+    margin: 2em 7em;
     /* display: flex;
     justify-content: space-between;
     flex-wrap: wrap; */
@@ -346,14 +346,14 @@ select option {
 
 
 .select-menu{
-    width: 150px;
+    /* width: 8em; */
     border-radius: 8px;
     background: #D3573C;
 }
 
 .select-menu .select-btn{
     display: flex;
-    height: 15px;
+    /* height: 15px; */
     background: #901C1C;
     padding: 20px;
     font-size: 18px;
@@ -416,7 +416,7 @@ select option {
 
 .sort{
     display: flex;
-    margin: 0 50px;
+    margin: 0 10em;
 }
 
 #sortBy{
