@@ -434,8 +434,13 @@ select option {
     color: white;
 }
 
+@media screen and (min-width: 1920px) {
+    .photograph-body {
+        margin: 2em -1em;
+    }
+}
 
-@media screen and (maw-width: 1024px) {
+@media screen and (max-width: 1024px) {
     .photograph-header{
         margin: 0 6em;
     }
@@ -462,11 +467,7 @@ select option {
 }
 
 
-@media screen and (min-width: 1920px) {
-    .photograph-body {
-        margin: 2em -1em;
-    }
-}
+
 
 @media screen and (max-width: 768px) {
     .photograph-header{
