@@ -31,13 +31,9 @@ header {
     }
 }
 
-header a {
-    padding-left: 10em;
-}
 
 h1 {
     color: #901C1C;
-    margin-right: 100px;
     text-align: center;
 }
 
@@ -51,12 +47,13 @@ h1 {
     grid-template-columns: 1fr 1fr 1fr;
     /* gap: 70px; */
     gap: 5em;
-    margin-top: 5em;
+    margin: 5em;
 }
 
 @media screen and (max-width: 768px) {
     .photographer_section {
         gap: 0em;
+        margin: 4em;
     }
 }
 
