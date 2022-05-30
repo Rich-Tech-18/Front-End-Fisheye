@@ -172,11 +172,11 @@ form input {
     justify-content: space-around;
     align-items: center;
     background: #D3573C;
-    width: 19vw;
+    width: 18%;
     height: 6vh;
     position: fixed;
-    top: 95vh;
-    left: 78vw;
+    top: 92%;
+    left: 75%;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
@@ -462,6 +462,11 @@ select option {
 }
 
 
+@media screen and (min-width: 1920px) {
+    .photograph-body {
+        margin: 2em -1em;
+    }
+}
 
 @media screen and (max-width: 768px) {
     .photograph-header{

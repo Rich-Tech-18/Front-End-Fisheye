@@ -19,6 +19,12 @@ header {
     margin : 0 10em 0 10em;
 }
 
+@media screen and (min-width: 1920px) {
+    .photograph-header {
+        margin: 0 15em 0 15em;
+    }
+}
+
 @media screen and (max-width: 1034px) {
     header {
         margin: 0 6em 0 6em;
