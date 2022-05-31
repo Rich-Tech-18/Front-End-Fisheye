@@ -23,6 +23,10 @@ header {
     .photograph-header {
         margin: 0 15em 0 15em;
     }
+    header {
+        margin: 0 15em 0 15em;
+    }
+   
 }
 
 @media screen and (max-width: 1034px) {

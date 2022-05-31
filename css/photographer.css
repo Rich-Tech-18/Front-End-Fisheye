@@ -64,7 +64,8 @@
 }
 
 .modal header h2 {
-    font-size: 64px;
+    font-size: 3em;
+    margin: 0;
     font-weight: normal;
     text-align: center;
 }
@@ -183,7 +184,7 @@ form input {
 
 .nameModal{
     order: -1;
-    font-size: 64px;
+    font-size: 3em;
     margin: 0;
 }
 
@@ -435,12 +436,24 @@ select option {
 }
 
 @media screen and (min-width: 1920px) {
-    .photograph-body {
-        margin: 2em -1em;
+    .photographer_section{
+        margin: 5em 2em;
+    }
+    .sort {
+        margin: 0 15em;
+    }
+    .photograph-body{
+        margin: 2em 5em;
     }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1320px) {
+    .photograph-header{
+        margin: 0 8em;
+    }
+}
+
+@media screen and (max-width: 1124px) {
     .photograph-header{
         margin: 0 6em;
     }
@@ -477,6 +490,15 @@ select option {
     .photograph-body{
         grid-template-columns: 1fr 1fr;
     }
+    .photograph-price{
+        width: 35%;
+        left: 60%;
+    }
+    .modal {
+        width: 100%;
+        height: 100vh;
+        padding: 0 35px;
+    }
 }
 
 @media screen and (max-width: 425px) {
@@ -510,7 +532,8 @@ select option {
     }
 
     .photograph-price{
-        left: 40%;
+        width: 45%;
+        left: 47%;
     }
 
     .modal{
@@ -528,6 +551,10 @@ select option {
 
     .modal textarea {
         width: 100%;
+    }
+
+    .sort {
+        margin: 10px 3em;
     }
 
 }
