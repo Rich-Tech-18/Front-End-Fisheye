@@ -44,11 +44,13 @@
     border-radius: 5px;
     background-color: #DB8876;
     width: 50%;
+    height: 100vh;
+    overflow: scroll;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 35px;
+    padding: 0 35px;
     margin: auto;
     animation: modaltop;
     animation-duration: 0.4s;
@@ -204,6 +206,8 @@ form input {
 
 #closeButton{
     width: 50px;
+    position: relative;
+    margin: 0.75em;
     align-self: flex-end;
     /* background-color: gray; */
     fill: #901C1C;
@@ -215,8 +219,9 @@ form input {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 150px;
-    height: 50vh;
+    margin-top: 6em;
+    height: 45vh;
+    position: relative;
 }
 
 
@@ -224,11 +229,12 @@ form input {
     display: block;
     width: 60%;
     height: 150%;
-    
+    position: relative;
     object-fit: contain;
 }
 
 #slider video {
+    position: relative;
     display: none;
     align-self: center;
     width: 100%;
@@ -284,10 +290,11 @@ form input {
 }
 
 #titleImg{
+    position: relative;
     color: #D3573C;
     align-self: center;
-    margin-top: 185px;
-    padding-right: 900px;
+    margin-top: 5em;
+    /* padding-right: 900px; */
 }
 
 #select-sort{
