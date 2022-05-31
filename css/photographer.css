@@ -591,4 +591,9 @@ select option {
         margin: 10px 3em;
     }
 
+    #slider img{
+        width: 100%;
+        height: 70vh;
+    }
+
 }
