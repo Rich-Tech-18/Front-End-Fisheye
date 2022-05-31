@@ -141,13 +141,13 @@ form input {
     align-items: center;
     flex-direction: column;
     justify-self: center;
-    width: 300px;
+    width: 19em;
     height: 350px;
 }
 
 .photograph-body article img {
     position: relative;
-    width: 300px;
+    width: 19em;
     height: 250px;
     border-radius: 5px;
     object-fit: cover;
@@ -155,7 +155,7 @@ form input {
 }
 
 .photograph-body article video {
-    width: 300px;
+    width: 19em;
     height: 250px;
 }
 
@@ -500,6 +500,16 @@ select option {
         padding: 0 35px;
     }
 }
+@media screen and(max-width: 550px) {
+    .sort{
+        margin: 0.5em 3em;
+    }
+    .photograph-header{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+}
 
 @media screen and (max-width: 425px) {
 
@@ -512,11 +522,28 @@ select option {
         flex-direction: column;
         text-align: center;
         height: auto;
+        margin: 0 10%;
+    }
+    .sort{
+        margin: 10px 10%;
+    }
+    .select-menu{
+        width: 40%;
     }
     .photograph-body{
         display: flex;
         flex-direction: column;
-        margin: 50px 60px;
+        margin: 0 10%;
+    }
+
+    .photograph-body article video{
+        width: 100%;
+    }
+    .photograph-body article img{
+        width: 100%;
+    }
+    .photograph-body article {
+        width: 100%;
     }
     #order2{
         order: 4;
