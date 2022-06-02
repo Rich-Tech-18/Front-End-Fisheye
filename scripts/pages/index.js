@@ -2,6 +2,7 @@ import {eraseCount, totalCount, countLikes, eraseMedia, displayMedia} from "http
 import {photographerFactory} from "https://rich-tech-18.github.io/Front-End-Fisheye/scripts/factories/photographer.js";
 
 async function getPhotographers() {
+    // recupere les tabbleau des photographes
     return fetch("https://rich-tech-18.github.io/Front-End-Fisheye/data/photographers.json")
     .then(reponse =>  reponse.json())
     .then( data  => {return data;})
@@ -19,7 +20,7 @@ async function getPhotographers() {
 
 
 async function displayData(photographers) {
-    
+    //affiche les donnée du tableau
 
     const photographersSection = document.querySelector(".photographer_section");
     const whereMyId = new URL (window.location).searchParams.get("id");
@@ -28,6 +29,7 @@ async function displayData(photographers) {
     // console.log(arraySave);
     
     if(window.location.pathname === "/Front-End-Fisheye/" || window.location.pathname === "/Front-End-Fisheye/index.html"){
+        //si ce trouve sur la page de lancement ou de l'index, lance la fonction pour afficher les photographes
          photographers.photographers.forEach((photographer) => {
         const photographerModel = photographerFactory(photographer);
         const userCardDOM = photographerModel.getUserCardDOM();
@@ -37,6 +39,8 @@ async function displayData(photographers) {
    
 
     if(window.location.pathname === "/Front-End-Fisheye/photographer.html"){
+
+        //si ce trouve sur la page photographer.html, affiche les donnes spécifique au photographe selectionner
 
         // console.log('sans sort '+photographers.media);
         // photographers.media.sort(function(a, b){
@@ -56,6 +60,7 @@ async function displayData(photographers) {
         
         photographers.photographers.forEach((photographer) =>{
             if (photographer.id === findMyId){
+                // boucle sur le tableau de donné du photographe selectionné
                 const photographerModel = photographerFactory(photographer);
                 const userHeaderDOM = photographerModel.getUserHeaderDOM();
                 const photographPictureDOM = photographerModel.getPhotographerPictureDom();
@@ -78,6 +83,10 @@ async function displayData(photographers) {
     
     
     next.addEventListener("click", function(){
+    //     Événement pour le bouton "suivant" de la lightbox,
+    //     Si le bouton est cliqué, fait une boucle pour récupère l'index de l'élément,
+    //    Puis compare l'index, si c'est supérieur aux tableau sourceMedia, l'index revient à zéro pour revenir sur le premier élément
+    //    Créer ainsi une boucle sur l'affichage de la lightbox.
         const sourceMedia = document.querySelectorAll(".photograph-body article");
         const videoInModal = document.querySelector("#slider video");
         const mediaInModal = document.querySelector("#lightboxModal #slider img");
@@ -106,6 +115,10 @@ async function displayData(photographers) {
         }
     });
     back.addEventListener("click", function(){
+        // Événement pour le bouton "suivant" de la lightbox,
+        // Si le bouton est cliqué, fait une boucle pour récupère l'index de l'élément,
+        // Puis compare l'index, si c'est inférieur à zéro, l'index sera égal au dernier élément du tableau
+        // Créer ainsi une boucle sur l'affichage de la lightbox.
         const sourceMedia = document.querySelectorAll(".photograph-body article");
         const mediaInModal = document.querySelector("#lightboxModal #slider img");
         const videoInModal = document.querySelector("#slider video");
@@ -119,7 +132,6 @@ async function displayData(photographers) {
         index = index - 1;
         if(index < 0){
             index = sourceMedia.length -1;
-            console.log(index);
         }
         mediaInModal.src = "https://rich-tech-18.github.io/Front-End-Fisheye/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
         videoInModal.src = "https://rich-tech-18.github.io/Front-End-Fisheye/"+sourceMedia[0].dataset.path+sourceMedia[index].dataset.media;
@@ -137,6 +149,10 @@ async function displayData(photographers) {
     });
 
     document.addEventListener("keydown", function(e){
+    //     Événement pour la touche droite pour la lightbox,
+    //     Si le bouton est cliqué, fait une boucle pour récupère l'index de l'élément,
+    //    Puis compare l'index, si c'est supérieur aux tableau sourceMedia, l'index revient à zéro pour revenir sur le premier élément
+    //    Créer ainsi une boucle sur l'affichage de la lightbox.
         if(e.keyCode === 39){
             const sourceMedia = document.querySelectorAll(".photograph-body article");
         const videoInModal = document.querySelector("#slider video");
@@ -166,6 +182,10 @@ async function displayData(photographers) {
         }
         }
     if(e.keyCode === 37){
+    //    Événement pour la touche gauche pour la lightbox,
+    //    Si le bouton est cliqué, fait une boucle pour récupère l'index de l'élément,
+    //    Puis compare l'index, si c'est supérieur aux tableau sourceMedia, l'index revient à zéro pour revenir sur le premier élément
+    //    Créer ainsi une boucle sur l'affichage de la lightbox.
         const sourceMedia = document.querySelectorAll(".photograph-body article");
         const mediaInModal = document.querySelector("#lightboxModal #slider img");
         const videoInModal = document.querySelector("#slider video");
@@ -218,6 +238,8 @@ async function displayData(photographers) {
     // console.log(orderByPopulaire);
     const selectOptionSort = document.querySelector(".select-menu");
     selectOptionSort.addEventListener("click", function(){
+        // Tri le tableau de donné en fonction du clique de l'utilisateur,
+        // Puis efface tout le DOM et affiche en fonction de l'ordre sélectionne
         const textSelect = document.querySelector(".sBtn-text");
         // if(selectOptionSort.value === "normal"){
           

@@ -1,6 +1,8 @@
 import { mediaFactory } from "https://rich-tech-18.github.io/Front-End-Fisheye/scripts/factories/media.js";
 
 export function countLikes(photograph, id){
+    // Fonction qui calcul tout les like des photographe,
+    // Et envoie le calcul
     let sum = 0;
     photograph.media.forEach((photographer) => {
         if(photographer.photographerId === id){
@@ -34,6 +36,7 @@ export function countLikes(photograph, id){
 
 
 export function displayMedia(array, id){
+    // function pour afficher les media des photographes
     array.forEach((array) => {
         const photographBody = document.querySelector(".photograph-body");
         if(array.photographerId === id){
@@ -46,12 +49,14 @@ export function displayMedia(array, id){
 }
 
 export function eraseMedia(){
+    //function pour effacer les Media des photographes
     const photographBody = document.querySelector(".photograph-body");
     photographBody.innerHTML = "";
 }
 
 
 export function totalCount(numberLike){  
+    //function qui ajoute +1 au au nombre total de like
     const selectLike = document.querySelectorAll(".likesPhoto");
     const paraTotal = document.createElement("p");
     const divLike = document.querySelector(".photograph-price");
@@ -61,7 +66,6 @@ export function totalCount(numberLike){
        selectLike[i].addEventListener("click", function(){
         numberLike += 1;    
         paraTotal.textContent = numberLike;
-        console.log(selectLike[i]);
     }, {once : true}); 
     }
     paraTotal.textContent = numberLike;
@@ -73,6 +77,7 @@ export function totalCount(numberLike){
 }
 
 export function eraseCount(){
+    //function qui efface le nombre de like total
     const divLike = document.querySelector(".photograph-price");
     const totalCount = document.querySelector("#totalCount");
     divLike.removeChild(totalCount);

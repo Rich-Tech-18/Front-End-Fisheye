@@ -1,4 +1,5 @@
 function displayModal() {
+    //function qui affiche la modal de contact
     const modal = document.getElementById("contact_modal");
     modal.setAttribute("aria-hidden", "false");
 	modal.style.display = "block";
@@ -8,6 +9,7 @@ const openModal = document.querySelectorAll(".contact_button");
 openModal[0].addEventListener("click", displayModal);
 
 function closeModal() {
+    //function qui ferme la modal de contact
     const modal = document.getElementById("contact_modal");
     modal.setAttribute("aria-hidden", "true");
     modal.style.display = "none";
@@ -17,12 +19,14 @@ const closeModalImage = document.querySelector("#closeModal");
 closeModalImage.addEventListener("click", closeModal);
 
 function closeLightBox(){
+    //function qui ferme la lightbox
     const lightBox = document.querySelector("#lightboxModal");
     lightBox.setAttribute("aria-hidden", "true");
     lightBox.style.display = "none";
 }
 
 document.addEventListener("keydown", function(e){
+    //événement pour fermer sur la touche échap, la modal et la lightbox
     if(e.keyCode === 27){
         closeModal();
         closeLightBox();
@@ -38,6 +42,7 @@ const mail = document.querySelector("#mail");
 const message = document.querySelector("#message");
 
 buttonModal.addEventListener("click", function(event){
+    //événemet qui envoie dans la consol javascript les donnée du formulaire
     event.preventDefault();
     console.log("Formulaire Envoyée");
     console.log("---------------------------------");
@@ -71,6 +76,7 @@ buttonModal.addEventListener("click", function(event){
 // }
 const closeButton = document.querySelector("#closeButton");
 closeButton.addEventListener("click", function(){
+    //événement pour fermer la lightbox
     const lightBox = document.querySelector("#lightboxModal");
     lightBox.style.display = "none";
     lightBox.setAttribute("aria-hidden", true);
@@ -81,9 +87,12 @@ const selectBtn = document.querySelector(".select-btn");
 const options = document.querySelectorAll(".option");
 const selectBtnText = document.querySelector(".sBtn-text");
 
+
+//affiche le menu déroulant avec les options de la liste de tri
 selectBtn.addEventListener("click", () => optionMenu.classList.toggle("active"));
 
 options.forEach(option => {
+    //ajout d'un événement pour afficher quel est le tri qui à été selectionner lors d'un click
     option.addEventListener("click", () => {
         let selectedOption = option.querySelector(".option-text").innerText;
         selectBtnText.innerText = selectedOption;

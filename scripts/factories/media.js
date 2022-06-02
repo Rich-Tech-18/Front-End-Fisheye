@@ -3,6 +3,8 @@ export function mediaFactory(data) {
 
 
     function getMediaCardDOM() {
+        //affiche les média du photographe sélectionner, utilisé sur photographer.html
+        // at ajout un événement sur chaque photo/video, pour afficher la lightbox sur l'élément sélectionner
         let name = "";
         const div = document.createElement("div");
         // const linkLightBox = document.createElement("a");
@@ -148,6 +150,7 @@ export function mediaFactory(data) {
     }
 
     function totalCount(numberLike){  
+        // V1 du compteur de likes, n'est plus utilisée
         const selectLike = document.querySelectorAll(".likesPhoto");
         const paraTotal = document.createElement("p");
         const divLike = document.querySelector(".photograph-price");

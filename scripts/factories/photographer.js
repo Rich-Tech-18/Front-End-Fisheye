@@ -8,6 +8,7 @@ export function photographerFactory(data) {
     // const getToNumber = parseInt(getID);
     
     function getUserCardDOM() {
+        //affiche les photographes dans des cartes, utilisé pour l'index.html
         const article = document.createElement( "article" );
         const img = document.createElement( "img" );
         img.setAttribute("src", picture);
@@ -38,6 +39,7 @@ export function photographerFactory(data) {
     }
 
     function getUserHeaderDOM(){
+        //affiche le photographe sélectionner, utilisé pour photographer.html
         const divName = document.createElement( "div" );
         divName.setAttribute("id", "order1");
         const divPhotographHeader = document.querySelector(".photograph-header");
@@ -60,6 +62,7 @@ export function photographerFactory(data) {
     }
 
     function getPhotographerPictureDom(){
+        //affiche le portrait du photographe, utiliser sur photographer.html
         const divPicure = document.createElement( "div" );
         const img = document.createElement( "img" );
         divPicure.setAttribute("id", "order3");
@@ -72,6 +75,7 @@ export function photographerFactory(data) {
     }
 
     function getPhotographerPrice(){
+        //affiche le prix du photographe, utiliser sur photographer.html
         // const divPrice = document.createElement('div');
         const paraPrice = document.createElement("p");
         paraPrice.textContent = price + "€" +" / " + "Jour";
@@ -80,6 +84,7 @@ export function photographerFactory(data) {
     }
 
     function getPhotographerName(){
+        //affiche le nom du photographe, utiliser sur photographer.html
         const namePhotograph = document.createElement("p");
         namePhotograph.textContent = name;
         namePhotograph.classList.add("nameModal");
