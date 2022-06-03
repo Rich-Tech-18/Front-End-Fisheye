@@ -507,7 +507,7 @@ select option {
         padding: 0 35px;
     }
 }
-@media screen and(max-width: 550px) {
+@media screen and (max-width: 550px) {
     .sort{
         margin: 0.5em 3em;
     }
